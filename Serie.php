@@ -12,7 +12,6 @@ class Serie
     private $type;
     private $note;
     private $fav;
-    private $realisateur;
     private  $nbSeason;
 
     /**
@@ -24,13 +23,12 @@ class Serie
      * @param $realisateur
      * @param $nbSeason
      */
-    public function __construct($name, $type, $note, $fav, $realisateur, $nbSeason)
+    public function __construct($name, $type, $note, $fav, $nbSeason)
     {
         $this->name = $name;
         $this->type = $type;
         $this->note = $note;
         $this->fav = $fav;
-        $this->realisateur = $realisateur;
         $this->nbSeason = $nbSeason;
     }
 
@@ -101,22 +99,6 @@ class Serie
     /**
      * @return mixed
      */
-    public function getRealisateur()
-    {
-        return $this->realisateur;
-    }
-
-    /**
-     * @param mixed $realisateur
-     */
-    public function setRealisateur($realisateur)
-    {
-        $this->realisateur = $realisateur;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getNbSeason()
     {
         return $this->nbSeason;
@@ -129,9 +111,4 @@ class Serie
     {
         $this->nbSeason = $nbSeason;
     }
-
-
-
-
-
 }
