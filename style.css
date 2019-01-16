@@ -1,0 +1,94 @@
+page{
+    display: flex;
+}
+label{
+    display: block;
+    color: white;
+    margin-bottom: 2%;
+}
+
+#logo{
+    height: 10%;
+    width: 10%;
+    border-color: white;
+
+}
+body{
+    background-color: #29A3FF;
+   }
+
+nav li{
+    display: inline;
+
+}
+#nav_menu{
+    color: white;
+}
+
+#nav_menu a:visited{
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+header{
+    display: flex;
+
+}
+
+#serie{
+    border-style: groove;
+    border-color: black;
+    position: relative;
+    background-size: cover;
+    width: 95%;
+    margin-top: 10px;
+}
+
+#serie:hover #affiche{
+     display: block;
+ }
+#affiche{
+    display: none;
+    background-color: white;
+
+}
+#titre{
+    color: white;
+}
+
+#info{
+    margin-top: 20px;
+    display: inline;
+}
+
+#formulaire{
+    margin-top: 10px;
+}
+
+
+
+
+@media screen and (max-width: 411px) {
+    #logo{
+        height: 100%;
+        width: 100%;
+        border-color: white;
+
+    }
+
+    #container{
+        display: flex;
+    }
+    #serie{
+        flex:auto;
+        width: 35%;
+
+    }
+
+    #serie:hover #affiche h1{
+        display: none;
+    }
+
+
+}
