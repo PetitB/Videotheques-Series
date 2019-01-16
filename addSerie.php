@@ -54,20 +54,21 @@
 </html>
 <?php
 require_once 'functions.php';
-
-$name = $_POST['name'];
-if(isset($_FILES['image']['tmp_name'])) {
-    $nameImage = $_FILES['image']['name'];
-    if(move_uploaded_file($_FILES['image']['tmp_name'], 'image/'.$nameImage)) {
-        $image = $nameImage;
-    } else {
-        echo "L'upload de l'image a échoué !";
+$name = (isset($_POST['name'])) ? $_POST['name'] : "";
+if($name!==""){
+    if(isset($_FILES['image']['tmp_name'])) {
+        $nameImage = $_FILES['image']['name'];
+        if(move_uploaded_file($_FILES['image']['tmp_name'], 'image/'.$nameImage)) {
+            $image = $nameImage;
+        } else {
+            echo "L'upload de l'image a échoué !";
+        }
     }
+    $fav = (isset($_POST['fav'])) ? true : false;
+    $type = (isset($_POST['type'])) ? $_POST['type'] : "";
+    $nbSeason = (isset($_POST['nbSeason'])) ? $_POST['nbSeason'] : "";
+    $note = (isset($_POST['note'])) ? $_POST['note'] : false;
+    $avis = (isset($_POST['avis'])) ? $_POST['avis'] : false;
+    echo addNewSerie(array('name' => $name, 'type' => $type, 'fav' => $fav, 'nbSeason' => $nbSeason, 'image' => $image, 'note' => $note, 'avis' => $avis));   
 }
-$fav = ($_POST['fav'] === NULL) ? false : true;
-$type = $_POST['type'];
-$nbSeason = $_POST['nbSeason'];
-$note = ($_POST['note'] === "Pas d'avis") ? $_POST['note'] : false;
-$avis = ($_POST['avis'] === "") ? $_POST['avis'] : false;
-echo addNewSerie(array($name, $type, $fav, $nbSeason, $image, $note, $avis));
 ?>

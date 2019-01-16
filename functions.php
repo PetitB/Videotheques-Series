@@ -6,7 +6,7 @@
   */
 function getContentJson($filePath){
 	$jsonFile = file_get_contents($filePath);
-	$dataJson = json_decode($jsonFile);
+	$dataJson = json_decode($jsonFile, true);
 	return $dataJson;
 }
 /**
@@ -26,19 +26,23 @@ function setNewContentJson($pathJsonFile, $newContent){
 	}
 }
 function getLaVideotheque(){
-	$videotheque[] = getContentJson("videotheque.json");
+	$videotheque = getContentJson("videotheque.json");
 	return isset($videotheque) ? $videotheque : [];
 }
 function addNewSerie($serie){
-	//$videotheque[] = getLaVideotheque();
-	//$message = "La série existe déjà.";
-	//foreach ($videotheque as $value) {
-		//if ($value['name'] !== $serie['name']) {
-			$videotheque[] = $serie;
-			setNewContentJson("videotheque.json",$videotheque);
-			$message = "La série a été ajouté avec succès.";
-		//}
-	//}
+	$videotheque = getLaVideotheque();
+	$message = "La série existe déjà.";
+	$verif = true;
+	foreach ($videotheque as $value) {
+		if ($value['name'] === $serie['name']) {
+			$verif = false;
+		}
+	}
+	if ($verif) {
+		$videotheque[] = $serie;
+		setNewContentJson("videotheque.json",$videotheque);
+		$message = "La série a été ajouté avec succès.";
+	}
 	return $message;
 }
 function noteSerie($nomSerie, $note, $avis = false){
