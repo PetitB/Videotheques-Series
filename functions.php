@@ -55,24 +55,27 @@ function noteSerie($nomSerie, $note, $avis = false){
 			if ($avis) {
 				$value['avis'] = $avis;
 				setNewContentJson("videotheque.json",$videotheque);
-				$message.="L'avis a bien été aussi pris en compte.";
+				$message.="Et l'avis a bien été mis à jour.";
 			}
 		}
 	}
 	return $message;
 }
 function displayListSeries($getOnlyFav = false){
-	$videotheque[] = getLaVideotheque();
-	$affichage = "Erreur lors de la récupération des données.";
+	$videotheque = getLaVideotheque();
+	$affichage = "";
 	foreach ($videotheque as $value) {
 		if ($getOnlyFav && $value['fav']) {
-			$affichage = '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
-			$affichage .= '<h1>'.$value['name'].'</h1></section>';
+			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
+			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
+			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
 		}
 		if (!$getOnlyFav) {
-			$affichage = '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
-			$affichage .= '<h1>'.$value['name'].'</h1></section>';
+			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
+			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
+			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
 		}
+		$affichage = ($affichage === "") ? "Erreur lors de la récupération des données." : $affichage;
 	}
 	return $affichage;
 }

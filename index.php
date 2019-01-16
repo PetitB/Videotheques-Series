@@ -7,101 +7,19 @@
 </head>
 <body>
 
-<header>
-    <img src="resources/logo.jpg" id="logo" alt="logo">
-    
-    <nav id="nav_menu">
-        <ul>
-            <li><a href="index.php">Liste des séries |</a></li>
-            <li><a href="favoris.php">Mes favoris |</a></li>
-            <li><a href="addSerie.php">Ajouter une série |</a></li>
-        </ul>
-    </nav>
-</header>
-
-
-
-
-
-<section id="info">
-    <article>
-    <a href="une_serie.php">
-    <img src="resources/logo.jpg" alt="logo">
-        <div id="affiche">
-            <h1>Très bonne série </h1></div>
-
-    </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-    <article>
-        <a href="une_serie.php">
-            <img src="resources/logo.jpg" alt="logo">
-            <div id="affiche">
-                <h1>Très bonne série </h1></div>
-
-        </a>
-    </article>
-
-</section>
-
-
-
-
-
-
-    </body>
+    <header>
+        <img src="resources/logo.jpg" id="logo" alt="logo">
+        
+        <nav id="nav_menu">
+            <ul>
+                <li><a href="index.php">Liste des séries |</a></li>
+                <li><a href="favoris.php">Mes favoris |</a></li>
+                <li><a href="addSerie.php">Ajouter une série</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="lesSeries">
+        <?php require_once "functions.php"; echo displayListSeries(); ?>        
+    </div>
+</body>
 </html>

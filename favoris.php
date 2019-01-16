@@ -16,49 +16,19 @@
 </head>
 <body>
 
-<header>
-    <img src="resources/logo.jpg" id="logo" alt="logo">
+    <header>
+        <img src="resources/logo.jpg" id="logo" alt="logo">
 
-    <nav id="nav_menu">
-        <ul>
-            <li><a href="index.php">Liste des séries |</a></li>
-            <li><a href="favoris.php">Mes favoris |</a></li>
-            <li><a href="addSerie.php">Ajouter une série |</a></li>
-        </ul>
-    </nav>
-</header>
-
-<div id="titre"><h1>MES FAVORIS</h1></div>
-
-
-<section id="container">
-    <article id="serie">
-    <a href="une_serie.php">
-    <img src="resources/logo.jpg" alt="image serie">
-
-    <div id="affiche">
-    <h1>Très bonne série </h1>
-    <p> 3 / 5</p></div>
-    </a>
-</article>
-
-<article id="serie" >
-    <a href="une_serie.php">
-        <img src="resources/logo.jpg" alt="image serie">
-
-        <div id="affiche">
-            <h1>Très bonne série </h1>
-            <p> 3 / 5</p></div>
-    </a>
-</article>
-
-<article id="serie">
-    <a href="une_serie.php">
-        <img src="resources/logo.jpg" alt="image serie">
-
-        <div id="affiche">
-            <h1>Très bonne série </h1>
-            <p> 3 / 5</p></div>
-    </a>
-</article>
-</section>
+        <nav id="nav_menu">
+            <ul>
+                <li><a href="index.php">Liste des séries |</a></li>
+                <li><a href="favoris.php">Mes favoris |</a></li>
+                <li><a href="addSerie.php">Ajouter une série |</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="lesFavs">
+        <?php require_once "functions.php"; echo displayListSeries(true); ?>        
+    </div>
+</body>
+</html>
