@@ -8,15 +8,15 @@
 
 class Videotheque
 {
-    private $series;
+    private $serie;
 
     /**
      * Videotheque constructor.
      * @param $series
      */
-    public function __construct($series)
+    public function __construct($serie)
     {
-        $this->series = $series;
+        $this->serie = $serie;
     }
 
     /**
@@ -24,7 +24,7 @@ class Videotheque
      */
     public function getSeries()
     {
-        return $this->series;
+        return $this->serie;
     }
 
     /**
@@ -32,7 +32,7 @@ class Videotheque
      */
     public function setSeries($series)
     {
-        $this->series = $series;
+        $this->serie = $serie;
     }
 
 }

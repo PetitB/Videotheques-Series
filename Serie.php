@@ -18,18 +18,20 @@ class Serie
      * Serie constructor.
      * @param $name
      * @param $type
-     * @param $note
      * @param $fav
      * @param $realisateur
      * @param $nbSeason
+     * @param $note
+     * @param $avis
      */
-    public function __construct($name, $type, $note, $fav, $nbSeason)
+    public function __construct($name, $type, $fav, $nbSeason, $note = false, $avis = false)
     {
         $this->name = $name;
         $this->type = $type;
-        $this->note = $note;
         $this->fav = $fav;
         $this->nbSeason = $nbSeason;
+        $this->note = $note;
+        $this->avis = $avis;
     }
 
     /**
@@ -67,22 +69,6 @@ class Serie
     /**
      * @return mixed
      */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * @param mixed $note
-     */
-    public function setNote($note)
-    {
-        $this->note = $note;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getFav()
     {
         return $this->fav;
@@ -110,5 +96,37 @@ class Serie
     public function setNbSeason($nbSeason)
     {
         $this->nbSeason = $nbSeason;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param mixed $note
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvis()
+    {
+        return $this->avis;
+    }
+
+    /**
+     * @param mixed $note
+     */
+    public function setAvis($avis)
+    {
+        $this->avis = $avis;
     }
 }
