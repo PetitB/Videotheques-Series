@@ -8,7 +8,7 @@
 <body>
 
     <header>
-        <img src="resources/logo.jpg" id="logo" alt="logo">
+        <img src="resources/logo.jpg" id="logo"  alt="logo">
         
         <nav id="nav_menu">
             <ul>

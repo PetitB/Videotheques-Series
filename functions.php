@@ -6,7 +6,7 @@
   */
 function getContentJson($filePath){
 	$jsonFile = file_get_contents($filePath);
-	$dataJson = json_decode($jsonFile, true);
+	$dataJson = json_decode($jsonFile,  true);
 	return $dataJson;
 }
 /**

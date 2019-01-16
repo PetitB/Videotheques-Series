@@ -50,7 +50,7 @@
                 <option>5</option>
             </select><br><br>
         <textarea name="avis" placeholder="Mon avis sur cette série."></textarea><br><br>
-        <label><input type="checkbox" name="fav">Ajouter aux favoris</label><br><br>
+        <label><input type="checkbox" name="fav">Ajouter aux favoris </label><br><br>
         <label><input type="submit" value="Ajouter à la liste"></label><br>
     </form>
 

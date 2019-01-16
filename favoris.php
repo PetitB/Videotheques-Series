@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ma vidéothèque de séries</title>
-    <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="style.css"  type="text/css" />
 </head>
 <body>
 
