@@ -10,26 +10,29 @@ class Serie
 {
     private $name;
     private $type;
-    private $note;
     private $fav;
-    private  $nbSeason;
+    private $nbSeason;
+    private $image;
+    private $note;
+    private $avis;
 
     /**
      * Serie constructor.
      * @param $name
      * @param $type
      * @param $fav
-     * @param $realisateur
      * @param $nbSeason
+     * @param $image
      * @param $note
      * @param $avis
      */
-    public function __construct($name, $type, $fav, $nbSeason, $note = false, $avis = false)
+    public function __construct($name, $type, $fav, $nbSeason, $image = false, $note = false, $avis = false)
     {
         $this->name = $name;
         $this->type = $type;
         $this->fav = $fav;
         $this->nbSeason = $nbSeason;
+        $this->image = $image;
         $this->note = $note;
         $this->avis = $avis;
     }
@@ -96,6 +99,22 @@ class Serie
     public function setNbSeason($nbSeason)
     {
         $this->nbSeason = $nbSeason;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $note
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 
     /**
