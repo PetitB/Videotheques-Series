@@ -17,11 +17,13 @@
             </ul>
         </nav>
     </header>
+
+
     <form method="post" enctype="multipart/form-data" action="addSerie.php">
         <label> Nom de la série : </label>
-        <input type="text" name="name" required placeholder="Nom de la série"/>
+        <input type="text" name="name" required placeholder="Nom de la série"/><br><br>
         <label>Image de la série:</label>
-        <input type="file" name="image" value="0"/>
+        <input type="file" name="image" value="0"/><br><br>
         <label> Type de la série :</label>
         <select name="type" required>
             <option>Action/Aventure</option>
@@ -34,9 +36,10 @@
             <option>Romance</option>
             <option>Science fiction</option>
             <option>Suspens</option>
-        </select>
+            <option>Thriller</option>
+        </select><br><br>
         <label> Nombre de saison :</label>
-        <input type="text" name="nbSeason" required value="1"/>
+        <input type="text" name="nbSeason" required value="1"/><br><br>
         <label> Ma note :</label>
             <select name="note">
                 <option selected="selected">Pas d'avis</option>
@@ -45,13 +48,16 @@
                 <option>3</option>
                 <option>4</option>
                 <option>5</option>
-            </select>
-        <textarea name="avis" placeholder="Mon avis sur cette série."></textarea>
-        <label><input type="checkbox" name="fav">Ajouter aux favoris</label>
-        <label><input type="submit" value="OK"></label>
+            </select><br><br>
+        <textarea name="avis" placeholder="Mon avis sur cette série."></textarea><br><br>
+        <label><input type="checkbox" name="fav">Ajouter aux favoris</label><br><br>
+        <label><input type="submit" value="Ajouter à la liste"></label><br>
     </form>
+
 </body>
 </html>
+
+
 <?php
 require_once 'functions.php';
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";

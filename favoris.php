@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ma vidéothèque de séries</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
 </head>
 <body>
 
@@ -27,8 +27,39 @@
             </ul>
         </nav>
     </header>
+
+
+    <div id="corps">
+        <h2 id="titre"> Mes favoris :</h2>
+    </div>
+
+
     <div id="lesFavs">
         <?php require_once "functions.php"; echo displayListSeries(true); ?>        
     </div>
+
+
+    <div id="lesSeriesFav">
+
+        <?php
+        require_once "functions.php";
+        $videotheque = getLaVideotheque();
+        //print_r($videotheque);
+        foreach ($videotheque as $value):
+            if($value['fav']):?>
+            <section id="seriefav" style="background-color:url('<?php $value['image'];?> ')">
+                <h2 id="titre_fav"><?php echo $value["name"]; ?></h2>
+
+            </section>
+
+        <?php
+            endif;
+            endforeach;
+        ?>
+    </div>
+
+
+
+
 </body>
 </html>
