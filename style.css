@@ -1,94 +1,167 @@
-page{
-    display: flex;
-}
-label{
-    display: block;
-    color: white;
-    margin-top: 10px;
+
+body {
+    background-color: #4E7AFF;
 }
 
-#logo{
-    height: 10%;
-    width: 10%;
-    border-color: white;
+@media screen and (min-width: 450px) {
 
-}
-body{
-    background-color: #29A3FF;
-   }
-
-nav li{
-    display: inline;
-
-}
-#nav_menu{
-    color: white;
-}
-
-#nav_menu a:visited{
-    color: white;
-}
-a{
-    text-decoration: none;
-}
-header{
-    display: flex;
-
-}
-
-#serie{
-    border-style: groove;
-    border-color: black;
-    position: relative;
-    background-size: cover;
-    width: 95%;
-    margin-top: 10px;
-}
-
-#serie:hover #affiche{
-     display: block;
- }
-#affiche{
-    display: none;
-    background-color: white;
-
-}
-#titre{
-    color: white;
-}
-
-#info{
-    margin-top: 20px;
-    display: inline;
-}
-
-#formulaire{
-    margin-top: 10px;
-}
-
-
-
-
-@media screen and (max-width: 411px) {
-    #logo{
-        height: 100%;
-        width: 100%;
-        border-color: white;
-
-    }
-
-    #container{
+    /* HEADER */
+    header {
         display: flex;
     }
-    #serie{
-        flex:auto;
-        width: 35%;
+
+    #logo {
+        height: 10%;
+        width: 10%;
+    }
+
+    nav {
+        text-align: center;
+        flex: auto;
+    }
+
+    nav ul {
+        display: inline-block;
+        margin: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        color: white;
+    }
+
+    nav a:visited {
+        color: white;
 
     }
 
-    #serie:hover #affiche h1{
-        display: none;
+/* FIN HEADER  */
+    #titre {
+        color: white;
+        margin-top: 50px;
     }
 
+
+    #lesSeries {
+        display: flex;
+
+    }
+
+    #serie {
+        flex: auto;
+        border-style: groove;
+        width: 35px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+
+    form{
+        color: white;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
 
 }
+
+
+#lesSeriesFav{
+
+    display: flex;
+}
+
+#seriefav{
+    flex: auto;
+    border-style: groove;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+#serie:hover #titre_fav{
+    display: block;
+}
+#titre_fav{
+    display: none;
+    background-color: white;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+
+    body{
+        background-color: red;
+    }
+
+    /* HEADER */
+    header {
+        display: flex;
+    }
+
+    #logo {
+        height: 10%;
+        width: 10%;
+    }
+
+    nav {
+        text-align: center;
+        flex: auto;
+    }
+
+    nav ul {
+        display: inline-block;
+        margin: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        color: white;
+    }
+
+    nav a:visited {
+        color: white;
+
+    }
+
+
+    #titre {
+        color: white;
+        margin-top: 50px;
+    }
+
+
+    #lesSeries {
+        display: flex;
+
+    }
+
+    #serie {
+        flex: auto;
+        border-style: groove;
+        width: 35px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+}
+
