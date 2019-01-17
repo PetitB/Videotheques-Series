@@ -25,10 +25,20 @@ function setNewContentJson($pathJsonFile, $newContent){
 		return false;
 	}
 }
+/**
+  * Récupère la vidéothèque
+  * @return Array
+  */
 function getLaVideotheque(){
 	$videotheque = getContentJson("videotheque.json");
 	return isset($videotheque) ? $videotheque : [];
 }
+/**
+  * Ajoute une série dans le fichier Json
+  * si elle n'existe pas déjà
+  * @param $serie Array
+  * @return $message String
+  */
 function addNewSerie($serie){
 	$videotheque = getLaVideotheque();
 	$message = "La série existe déjà.";
@@ -45,7 +55,32 @@ function addNewSerie($serie){
 	}
 	return $message;
 }
-function noteSerie($nomSerie, $note, $avis = false){
+/**
+  * Récupère une liste des séries du
+  * même type qu'indiqué en paramètre
+  * et seulement celle non favorite
+  * @param $serieType String
+  * @return $seriesOfSameType Array
+  */
+function getSeriesOfSameType($serieType) {
+	$videotheque = getLaVideotheque();
+	$seriesOfSameType = [];
+	foreach ($videotheque as $value) {
+		if ($value['type'] === $serieType && $value['fav'] !== true) {
+			$seriesOfSameType[] = $value;
+		}
+	}
+	return $seriesOfSameType;	
+}
+/**
+  * Change la note d'une série en fonction du nom,
+  * voire aussi son avis s'il est précisé en paramètre
+  * @param $nomSerie String
+  * @param $note String
+  * @param $avis String
+  * @return $message String
+  */
+function noteAndAddAvisSerie($nomSerie, $note, $avis = false){
 	$videotheque[] = getLaVideotheque();
 	$message = "Il y a eu une erreur.";
 	foreach ($videotheque as $value) {
@@ -61,7 +96,15 @@ function noteSerie($nomSerie, $note, $avis = false){
 	}
 	return $message;
 }
+
 // Pas d'HTML dans le PHP, dommage car en cas de modification d'une propriété ou autres, on doit modifier plusieurs fichiers HTML au lieu d'un fichier PHP
+
+/**
+  * Retourne l'affichage HTML d'une liste de série
+  * soit la vidéothèque entière, soit seulement les favoris
+  * @param $getOnlyFav Boolean
+  * @return $affichage String
+  */
 /*function displayListSeries($getOnlyFav = false){
 	$videotheque = getLaVideotheque();
 	$affichage = "";
@@ -79,8 +122,13 @@ function noteSerie($nomSerie, $note, $avis = false){
 		$affichage = ($affichage === "") ? "Erreur lors de la récupération des données." : $affichage;
 	}
 	return $affichage;
-}
-function displaySerie($nameSerie){
+}*/
+/**
+  * Retourne l'affichage HTML d'une série via son nom
+  * @param $nameSerie String
+  * @return $affichage String
+  */
+/*function displaySerie($nameSerie){
 	$videotheque[] = getLaVideotheque();
 	$affichage = "Erreur lors de la récupération des données.";
 	foreach ($videotheque as $value) {
@@ -93,8 +141,12 @@ function displaySerie($nameSerie){
 		$affichage .= '';
 	}
 	return $affichage;
-}
-function displayFav(){
-	displayListSeries(true);
+}*/
+/**
+  * Retourne l'affichage HTML des favoris
+  * @return String
+  */
+/*function displayFav(){
+	return displayListSeries(true);
 }*/
 ?>
