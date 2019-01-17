@@ -30,33 +30,16 @@
     require_once "functions.php";
 	$videotheque = getLaVideotheque();
 	//print_r($videotheque);
-	foreach ($videotheque as $value): ?>
-        <section id="serie" style="background-color:url('<?php $value['image'];?> ')">
-        <h2><?php echo $value["name"]; ?></h2>
-
-        </section>
-        <?php endforeach; ?>
+	foreach ($videotheque as $value){ ?>
+        <a href="une_serie.php?nameSerie=<?php echo $value['name']?>">
+            <section class="serie" style="background-image:url(<?php echo "image/".$value["image"];?>)">
+                <h2><?php echo $value["name"]; ?></h2>
+            </section>
+        </a>
+        <?php } ?>
     </div>
 
 
 
 </body>
 </html>
-
-
-<!--
-	foreach ($videotheque as $value) {
-		if ($getOnlyFav && $value['fav']) {
-			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
-			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
-			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
-		}
-		if (!$getOnlyFav) {
-			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
-			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
-			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
-		}
-		$affichage = ($affichage === "") ? "Erreur lors de la récupération des données." : $affichage;
-	}
-	return $affichage;
--->

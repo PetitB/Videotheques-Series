@@ -46,58 +46,49 @@ body {
         display: flex;
 
     }
-
-    #serie {
+    .serie {
         flex: auto;
         border-style: groove;
-        width: 35px;
-        margin-top: 10px;
-        margin-left: 10px;
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+        padding-left: 10px;
     }
-
-
+    .serie a {
+        position: relative;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
     form{
         color: white;
         display: inline-block;
         width: 100%;
         text-align: center;
     }
+    #lesSeriesFav{
 
+        display: flex;
+    }
+
+    #seriefav{
+        flex: auto;
+        border-style: groove;
+        width: 250px;
+        height: 250px;
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+    #serie:hover #titre_fav{
+        display: block;
+    }
+    #titre_fav{
+        display: none;
+        background-color: white;
+        margin-bottom: 10px;
+
+    }
 }
-
-
-#lesSeriesFav{
-
-    display: flex;
-}
-
-#seriefav{
-    flex: auto;
-    border-style: groove;
-    width: 50%;
-    margin-top: 10px;
-    margin-left: 10px;
-
-}
-#serie:hover #titre_fav{
-    display: block;
-}
-#titre_fav{
-    display: none;
-    background-color: white;
-    margin-bottom: 10px;
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
