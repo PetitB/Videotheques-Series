@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <img src="resources/logo.jpg" id="logo">
+        <img src="resources/logo.jpg" id="logo" alt="logo">
 
         <nav id="nav_menu">
             <ul>
@@ -19,6 +19,27 @@
     </header>
 
 
+    <div>
+        <h2> Ajouter une série déjà prédéfinie</h2>
+        <form>
+            <select name="bonjour">
+            <?php
+            require_once "functions.php";
+            $listpredefinie = getListPredef();
+
+            foreach ($listpredefinie as $value){
+                ?>
+            <option value="<?php echo $value['name']; ?>">
+
+            <?php
+            } ?>
+
+            </option></select>
+        </form>
+    </div>
+
+    <div id="form">
+        <h2> Ajouter une série non présente dans la liste</h2>
     <form method="post" enctype="multipart/form-data" action="addSerie.php">
         <label> Nom de la série : </label>
         <input type="text" name="name" required placeholder="Nom de la série"/><br><br>
@@ -53,6 +74,7 @@
         <label><input type="checkbox" name="fav">Ajouter aux favoris </label><br><br>
         <label><input type="submit" value="Ajouter à la liste"></label><br>
     </form>
+    </div>
 
 </body>
 </html>

@@ -33,6 +33,16 @@ function getLaVideotheque(){
 	$videotheque = getContentJson("videotheque.json");
 	return isset($videotheque) ? $videotheque : [];
 }
+
+
+/**
+ * Récupère la liste prédéfinie
+ * @return Array
+ */
+function getListPredef(){
+    $listepredef = getContentJson("predef.json");
+    return isset($listepredef) ? $listepredef : [];
+}
 /**
   * Ajoute une série dans le fichier Json
   * si elle n'existe pas déjà

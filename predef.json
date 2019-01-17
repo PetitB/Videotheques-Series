@@ -1,0 +1,11 @@
+[    {"name":"You","type":"Suspens","fav":false,"nbSeason":"1","image":"you.jpg","note":"","avis":""},
+    {"name":"Picky Blinders","type":"Drame","fav":false,"nbSeason":"4","image":"picky.jpg","note":"","avis":""},
+    {"name":"Pretty Little Liars","type":"Drame","fav":false,"nbSeason":"7","image":"pll.jpg","note":"","avis":""},
+    {"name":"Brooklyn 99","type":"Drame","fav":false,"nbSeason":"6","image":"b99.jpg","note":"","avis":""},
+    {"name":"Psych","type":"Drame","fav":false,"nbSeason":"8","image":"psych.jpg","note":"","avis":""},
+    {"name":"Jessica Jones","type":"Drame","fav":false,"nbSeason":"2","image":"jjones.jpg","note":"","avis":""},
+    {"name":"La casa de Papel","type":"Drame","fav":false,"nbSeason":"3","image":"casadepapel.jpg","note":"","avis":""},
+    {"name":"13 reasons why","type":"Drame","fav":false,"nbSeason":"3","image":"13rw.jpg","note":"","avis":""},
+    {"name":"Luke Cage","type":"Drame","fav":false,"nbSeason":"2","image":"lukecage.jpg","note":"","avis":""},
+    {"name":"Sex education","type":"Drame","fav":false,"nbSeason":"1","image":"sexedu.jpg","note":"","avis":""}
+]

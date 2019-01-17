@@ -30,27 +30,28 @@
 
 
     <div id="corps">
-        <h2 id="titre"> Mes favoris :</h2>
+        <h1 id="titre"> Mes favoris :</h1>
     </div>
 
-    <div id="lesSeriesFav">
 
+    <div id="containerFav">
         <?php
         require_once "functions.php";
         $videotheque = getLaVideotheque();
-        foreach ($videotheque as $value){
-            if($value['fav']){?>
-                <a href="une_serie.php?nameSerie=<?php echo $value['name']?>">
-                    <section id="seriefav" style="background-color:url(<?php echo 'image/'.$value['image'];?>)">
-                        <h2 id="titre_fav"><?php echo $value["name"]; ?></h2>
-                    </section>
+        //print_r($videotheque);
+        foreach ($videotheque as $value) {
+            if ($value['fav']) {
+                ?>
+                <a href="une_serie.php?nameSerie=<?php echo $value['name'] ?>">
+                    <article class="serieFav">
+                        <img class="imgSerie" alt=<?php echo "image/" . $value["image"]; ?> src=<?php echo "image/" . $value["image"]; ?>>
+                       <div class="infoSerieFav">
+                        <p class="nomSerie"><?php echo $value["name"]; ?></p> <p><?php echo $value["note"]; ?> /5</p></div>
+                    </article>
                 </a>
-        <?php
-            }
-        }
-        ?>
+            <?php }
+        } ?>
     </div>
-
 
 
 
