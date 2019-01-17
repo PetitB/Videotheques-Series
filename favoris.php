@@ -33,28 +33,21 @@
         <h2 id="titre"> Mes favoris :</h2>
     </div>
 
-
-    <div id="lesFavs">
-        <?php require_once "functions.php"; echo displayListSeries(true); ?>        
-    </div>
-
-
     <div id="lesSeriesFav">
 
         <?php
         require_once "functions.php";
         $videotheque = getLaVideotheque();
-        //print_r($videotheque);
-        foreach ($videotheque as $value):
-            if($value['fav']):?>
-            <section id="seriefav" style="background-color:url('<?php $value['image'];?> ')">
-                <h2 id="titre_fav"><?php echo $value["name"]; ?></h2>
-
-            </section>
-
+        foreach ($videotheque as $value){
+            if($value['fav']){?>
+                <a href="une_serie.php?nameSerie=<?php echo $value['name']?>">
+                    <section id="seriefav" style="background-color:url(<?php echo 'image/'.$value['image'];?>)">
+                        <h2 id="titre_fav"><?php echo $value["name"]; ?></h2>
+                    </section>
+                </a>
         <?php
-            endif;
-            endforeach;
+            }
+        }
         ?>
     </div>
 

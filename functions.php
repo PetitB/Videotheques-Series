@@ -61,7 +61,8 @@ function noteSerie($nomSerie, $note, $avis = false){
 	}
 	return $message;
 }
-function displayListSeries($getOnlyFav = false){
+// Pas d'HTML dans le PHP, dommage car en cas de modification d'une propriété ou autres, on doit modifier plusieurs fichiers HTML au lieu d'un fichier PHP
+/*function displayListSeries($getOnlyFav = false){
 	$videotheque = getLaVideotheque();
 	$affichage = "";
 	foreach ($videotheque as $value) {
@@ -95,5 +96,5 @@ function displaySerie($nameSerie){
 }
 function displayFav(){
 	displayListSeries(true);
-}
+}*/
 ?>
