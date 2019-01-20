@@ -31,14 +31,14 @@
     foreach ($videotheque as $value){
         if ($value['id'] == $serie){
     ?>  <h2><u><?php $nom = $value['name']; echo $nom ?></u></h2>
-        <img alt="<?php echo $value['name']; ?>" src="<?php echo "image/" . $value["image"]; ?>" class="imgSerie"></img>
-        <h1><u>Genre  </u>: <?php $type= $value['type']; echo $type; ?></h1>
-        <h1><u>Résumé </u>: <?php echo $value['resume']; ?></h1>
-        <h1><?php echo $value['nbSeason'] . ' '; ?> <?php if($value['nbSeason'] > 1) echo "saisons"; else echo "saison"; ?> </h1>
+        <img alt="<?php echo $value['name']; ?>" src="<?php echo "image/" . $value["image"]; ?>" class="imgSerie"/>
+        <p><u>Genre  </u>: <?php $type= $value['type']; echo $type; ?></p>
+        <p><u>Résumé </u>: <?php echo $value['resume']; ?></p>
+        <p><?php echo $value['nbSeason'] . ' '; ?> <?php if($value['nbSeason'] > 1) echo "saisons"; else echo "saison"; ?> </p>
         <?php if ($value['fav']); ?>
 
-        <h1><u>Mon avis </u>: <?php echo $value['avis']; ?></h1>
-        <h1><u>Note</u> : <?php echo $value['note']; ?>/5</h1>
+        <p><u>Mon avis </u>: <?php echo $value['avis']; ?></p>
+        <p><u>Note</u> : <?php echo $value['note']; ?>/5</p>
         <?php }
         }
 
@@ -46,14 +46,13 @@
         if ($value['id'] == $serie){
             ?>  <h2><u><?php $nom = $value['name']; echo $nom ?></u></h2>
             <img alt="<?php echo $value['name']; ?>" src="<?php echo "image/" . $value["image"]; ?>" class="imgSerie"></img>
-            <h1><u>Genre  </u>: <?php $type= $value['type']; echo $type; ?></h1>
-            <h1><u>Résumé </u>: <?php echo $value['resume']; ?></h1>
-            <h1><?php echo $value['nbSeason'] . ' '; ?> <?php if($value['nbSeason'] > 1) echo "saisons"; else echo "saison"; ?> </h1>
+            <p><u>Genre  </u>: <?php $type= $value['type']; echo $type; ?></p>
+            <p><u>Résumé </u>: <?php echo $value['resume']; ?></p>
+            <p><?php echo $value['nbSeason'] . ' '; ?> <?php if($value['nbSeason'] > 1) echo "saisons"; else echo "saison"; ?> </p>
             <?php if ($value['fav']); ?>
 
-            <h1><u>Mon avis </u>: <?php echo $value['avis']; ?></h1>
-            <h1><u>Note</u> : <?php echo $value['note']; ?>/5</h1>
-            <label><input type="checkbox" name="fav" <?php if ($value['fav'] == 1) echo "checked"?>>Ajouter aux favoris </label><br><br>
+            <p><u>Mon avis </u>: <?php echo $value['avis']; ?></p>
+            <p><u>Note</u> : <?php echo $value['note']; ?>/5</p>
         <?php }
     }
      ?>

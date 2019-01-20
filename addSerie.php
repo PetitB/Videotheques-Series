@@ -23,11 +23,11 @@
 
 
     <div>
-        <h1 id="titre"> Ajouter une série déjà prédéfinie :</h1>
+        <h1 id="titre1"> Ajouter une série déjà prédéfinie :</h1>
         <form>
             <label>Vous pouvez choisir une série de la liste pour l'ajouter: </label>
             <select name="listePredef">
-                <option> </option>
+                <option value=""> Veuillez choisir une série </option>
 
             <?php
             require_once "functions.php";
@@ -40,11 +40,11 @@
             <label> Ma note :</label>
             <select name="note">
                 <option selected="selected">Pas d'avis</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select><br><br>
             <label> Mon avis :</label>
             <textarea name="avis" placeholder="Mon avis sur cette série."></textarea><br><br>
@@ -55,7 +55,7 @@
 
     <div id="form">
         <hr>
-        <h2 id="titre"> Ajouter une série non existante :</h2>
+        <h1 id="titre2"> Ajouter une série non existante :</h1>
     <form method="post" enctype="multipart/form-data" action="addSerie.php">
         <label> Nom de la série : </label>
         <input type="text" name="name" required placeholder="Nom de la série"/><br><br>
@@ -63,6 +63,7 @@
         <input type="file" name="image" /><br><br>
         <label> Type de la série :</label>
         <select name="type" required>
+            <option value=""> Veuillez choisir une genre </option>
             <option>Action/Aventure</option>
             <option>Animation</option>
             <option>Comédie</option>
