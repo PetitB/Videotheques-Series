@@ -4,43 +4,12 @@ body{
 }
 
 
-    /* HEADER */
-    header {
-        display: flex;
-    }
-
-    #logo {
-        height: 10%;
-        width: 10%;
-    }
-
-    nav {
-        text-align: center;
-        flex: auto;
-    }
-
-    nav ul {
-        display: inline-block;
-        margin: 0;
-    }
-
-    nav li {
-        display: inline-block;
-        color: white;
-    }
-
-    nav a:visited {
-        color: white;
-
-    }
-
-    /* FIN HEADER  */
     #titre {
         color: white;
     }
 
     /* Flex liste*/
-    img {
+    .imgSerie {
         width: 250px;
         height: 250px;
         display: block;
@@ -68,7 +37,7 @@ body{
 
     /* Fin Flex list*/
     /* Flex Fav*/
-    .imgSerie {
+    .imgSerieFav {
         width: 500px;
         height: 200px;
         display: block;
@@ -80,7 +49,6 @@ body{
     .infoSerieFav {
         display: none;
         color: black;
-        font-family: Arial;
         background-color: white;
         position: relative;
         bottom: 65px;
@@ -111,5 +79,93 @@ form{
     color: white;
     margin: auto;
     margin-top: 15px;
+}
+
+
+
+
+#infoUneSerie{
+    text-align: center;
+    color: white;
+}
+
+#infoUneSerie img{
+    display: block;
+    margin: auto;
+}
+/* ------------------------------------------------------------------------------------------ */
+
+
+/* Format mobile */
+@media screen and (max-width: 650px){
+
+    /* Flex liste*/
+
+    .infoSerie {
+        display: block;
+        color: white;
+        position: relative;
+        text-align: center;
+        bottom: 45px;
+        width: 300px;
+        margin-top: 15px;
+        background-color: transparent;
+    }
+    a .infoSerie{
+        text-decoration: white;
+    }
+    .imgSerie{
+        display: none;
+    }
+
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        margin: auto;
+        padding-top: 30px;
+    }
+
+    /* Fin Flex list*/
+
+
+
+    /* Flex Fav*/
+    .imgSerieFav {
+        width: 200px;
+        height: 200px;
+    }
+
+    .nomSerieFav{
+        color: black;
+        margin-top: 10px;
+}
+
+    .infoSerieFav {
+        display: block;
+        color: white;
+        position: relative;
+        text-align: center;
+        bottom: 20px;
+        width: 100%;
+    }
+
+
+
+    #containerFav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+    }
+
+    #noteFav{
+        display: none;
+    }
+
+    /* Fin Flex Fav*/
+
+
+
+
 }
 

@@ -43,6 +43,7 @@ function getListPredef(){
     $listepredef = getContentJson("predef.json");
     return isset($listepredef) ? $listepredef : [];
 }
+
 /**
   * Ajoute une série dans le fichier Json
   * si elle n'existe pas déjà
@@ -65,6 +66,7 @@ function addNewSerie($serie){
 	}
 	return $message;
 }
+
 /**
   * Récupère une liste des séries du
   * même type qu'indiqué en paramètre
@@ -74,14 +76,22 @@ function addNewSerie($serie){
   */
 function getSeriesOfSameType($serieType) {
 	$videotheque = getLaVideotheque();
+	$listePredef = getListPredef();
 	$seriesOfSameType = [];
 	foreach ($videotheque as $value) {
 		if ($value['type'] === $serieType && $value['fav'] !== true) {
 			$seriesOfSameType[] = $value;
 		}
 	}
+    foreach ($listePredef as $value) {
+        if ($value['type'] === $serieType && $value['fav'] !== true) {
+            $seriesOfSameType[] = $value;
+        }
+    }
+
 	return $seriesOfSameType;	
 }
+
 /**
   * Change la note d'une série en fonction du nom,
   * voire aussi son avis s'il est précisé en paramètre
@@ -90,6 +100,7 @@ function getSeriesOfSameType($serieType) {
   * @param $avis String
   * @return $message String
   */
+
 function noteAndAddAvisSerie($nomSerie, $note, $avis = false){
 	$videotheque[] = getLaVideotheque();
 	$message = "Il y a eu une erreur.";
