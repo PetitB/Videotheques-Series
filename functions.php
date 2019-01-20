@@ -116,7 +116,15 @@ function getSeriesOfSameType($serieType) {
 	}
     foreach ($listePredef as $value) {
         if ($value['type'] === $serieType && $value['fav'] !== true) {
-            $seriesOfSameType[] = $value;
+        	$addOrNotAdd = true;
+        	foreach ($videotheque as $mySerie) {
+        		if ($mySerie['name'] === $value['name']) {
+        			$addOrNotAdd = false;
+        		}
+        	}
+        	if ($addOrNotAdd) {
+            	$seriesOfSameType[] = $value;
+        	}
         }
     }
 
