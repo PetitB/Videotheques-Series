@@ -35,12 +35,12 @@
             if ($value['fav']) {
                 ?>
                 <a href="une_serie.php?id=<?php echo $value['id'] ?>">
-                    <article class="serieFav">
+                    <div class="serieFav">
                         <img class="imgSerieFav" alt="<?php echo $value['name']; ?>" src=<?php echo 'image/' . $value['image']; ?>>
                            <div class="infoSerieFav">
                         <p class="nomSerieFav"><?php echo $value['name']; ?></p> <p class='noteFav'><?php echo $value['note']; ?> /5</p>
                            </div>
-                    </article>
+                    </div>
                 </a>
             <?php }
         } ?>
