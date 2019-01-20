@@ -83,7 +83,7 @@ function addNewSerieViaPredef($seriePredefName){
 	$laSeriePredef = [];
 	foreach ($listePredef as $seriePredef) {
 		if ($seriePredef['name'] === $serieName) {
-			$laSeriePredef[] = $value;
+			$laSeriePredef[] = $seriePredef;
 		}
 	}
 	foreach ($videotheque as $serieVideotheque) {
@@ -155,6 +155,23 @@ function noteAndAddAvisSerie($nomSerie, $note, $avis = false){
 		}
 	}
 	return $message;
+}
+
+/**
+  * Met/retire des favoris une série en fonction du nom.
+  * @param $nomSerie String
+  * @param $note String
+  * @param $avis String
+  */
+
+function favOrNotfav($nomSerie, $fav){
+	$videotheque[] = getLaVideotheque();
+	foreach ($videotheque as $value) {
+		if ($value['name'] === $nomSerie) {
+			$value['fav'] = $fav;
+			setNewContentJson("videotheque.json",$videotheque);
+		}
+	}
 }
 
 // Pas d'HTML dans le PHP, dommage car en cas de modification d'une propriété
