@@ -25,6 +25,7 @@ function setNewContentJson($pathJsonFile, $newContent){
 		return false;
 	}
 }
+
 /**
   * Récupère la vidéothèque.
   * @return Array
@@ -34,9 +35,8 @@ function getLaVideotheque(){
 	return isset($videotheque) ? $videotheque : [];
 }
 
-
 /**
- * Récupère la liste prédéfinie.
+ * Récupère la liste prédéfinie de série.
  * @return Array
  */
 function getListPredef(){
@@ -80,13 +80,15 @@ function addNewSerieViaPredef($seriePredefName){
 	$listePredef = getListPredef();
 	$message = "La série est déjà ajouté dans la vidéothèque.";
 	$verif = true;
-	$laSeriePredef = [];
 	foreach ($listePredef as $seriePredef) {
-		if ($seriePredef['name'] === $serieName) {
-			$laSeriePredef[] = $seriePredef;
+		if ($seriePredef['name'] === $seriePredefName) {
+			$laSeriePredef = $seriePredef;
+			$laSeriePredef['id'] = count($videotheque)+1;
 		}
 	}
 	foreach ($videotheque as $serieVideotheque) {
+		echo "serie videotheque name = ".$serieVideotheque['name']."<br/>";
+		echo "serie predef name = ".$laSeriePredef['name']."<br/>";
 		if ($serieVideotheque['name'] === $laSeriePredef['name']) {
 			$verif = false;
 		}

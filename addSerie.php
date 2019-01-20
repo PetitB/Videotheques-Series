@@ -24,7 +24,7 @@
 
     <div>
         <h1 id="titre1"> Ajouter une série déjà prédéfinie :</h1>
-        <form>
+        <form method="post" enctype="multipart/form-data" action="addSerie.php">
             <label>Vous pouvez choisir une série de la liste pour l'ajouter: </label>
             <select name="listePredef">
                 <option value=""> Veuillez choisir une série </option>
@@ -105,6 +105,11 @@ require_once 'functions.php';
 $videotheque = getLaVideotheque();
 $size = count($videotheque);
 $id = $size+1;
+
+$serieNameListPredef = (isset($_POST['listePredef'])) ? $_POST['listePredef'] : "";
+if ($serieNameListPredef) {
+    echo addNewSerieViaPredef($serieNameListPredef);
+}
 
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";
 if($name!==""){
