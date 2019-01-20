@@ -107,8 +107,11 @@ $size = count($videotheque);
 $id = $size+1;
 
 $serieNameListPredef = (isset($_POST['listePredef'])) ? $_POST['listePredef'] : "";
+$fav = (isset($_POST['fav'])) ? true : false;
+$note = (isset($_POST['note'])) ? $_POST['note'] : false;
+$avis = (isset($_POST['avis'])) ? $_POST['avis'] : false;
 if ($serieNameListPredef) {
-    echo addNewSerieViaPredef($serieNameListPredef);
+    echo addNewSerieViaPredef($serieNameListPredef, $fav, $note, $avis);
 }
 
 $name = (isset($_POST['name'])) ? $_POST['name'] : "";

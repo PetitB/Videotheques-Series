@@ -31,7 +31,6 @@
             <?php
             require_once "functions.php";
             $videotheque = getLaVideotheque();
-            //print_r($videotheque);
             foreach ($videotheque as $value){ ?>
                 <a href="une_serie.php?id=<?php echo $value['id']?>">
                     <article class="serie">

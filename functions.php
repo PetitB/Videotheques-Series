@@ -75,7 +75,7 @@ function addNewSerie($serie){
   * @param $seriePredefName Array
   * @return $message String
   */
-function addNewSerieViaPredef($seriePredefName){
+function addNewSerieViaPredef($seriePredefName, $fav = false, $note = false, $avis = false){
 	$videotheque = getLaVideotheque();
 	$listePredef = getListPredef();
 	$message = "La série est déjà ajouté dans la vidéothèque.";
@@ -83,17 +83,18 @@ function addNewSerieViaPredef($seriePredefName){
 	foreach ($listePredef as $seriePredef) {
 		if ($seriePredef['name'] === $seriePredefName) {
 			$laSeriePredef = $seriePredef;
-			$laSeriePredef['id'] = count($videotheque)+1;
 		}
 	}
 	foreach ($videotheque as $serieVideotheque) {
-		echo "serie videotheque name = ".$serieVideotheque['name']."<br/>";
-		echo "serie predef name = ".$laSeriePredef['name']."<br/>";
 		if ($serieVideotheque['name'] === $laSeriePredef['name']) {
 			$verif = false;
 		}
 	}
 	if ($verif) {
+		$laSeriePredef['id'] = count($videotheque)+1;
+		$laSeriePredef['fav'] = $fav;
+		$laSeriePredef['note'] = $note;
+		$laSeriePredef['avis'] = $avis;
 		$videotheque[] = $laSeriePredef;
 		setNewContentJson("videotheque.json",$videotheque);
 		$message = "La série a été ajouté avec succès.";
