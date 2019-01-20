@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Ajout de série</title>
+    <title>Vidéothèque de séries</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="navbar.css" type="text/css" />
 </head>
@@ -11,7 +11,7 @@
 
 <header>
     <div class="menu">
-        <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo"></img></a>
+        <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo"></a>
         <input class="burger" type="checkbox" id="checkbox">
         <nav>
             <a href="index.php">| Liste des séries |</a>
@@ -72,7 +72,7 @@
         foreach ($seriesSametype as $value) {
             if ($value['id'] != $serie) {
                 ?>
-                <a href="une_serie.php?id=<?php echo $value['id'] ?>">
+                <a href="serie.php?id=<?php echo $value['id'] ?>">
                     <article class="serie">
                         <img class="imgSerie" alt="image" src=<?php echo "image/" . $value["image"]; ?>>
                         <div class="infoSerie">
