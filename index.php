@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Ma vidéothèque de séries</title>
@@ -33,7 +33,7 @@
             $videotheque = getLaVideotheque();
             //print_r($videotheque);
             foreach ($videotheque as $value){ ?>
-                <a href="serie.php?id=<?php echo $value['id']?>">
+                <a href="une_serie.php?id=<?php echo $value['id']?>">
                     <article class="serie">
                         <img class="imgSerie" alt="image" src=<?php echo "image/".$value["image"];?>>
                         <div class="infoSerie">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Ma vidéothèque de séries</title>
@@ -34,7 +34,7 @@
         foreach ($videotheque as $value) {
             if ($value['fav']) {
                 ?>
-                <a href="serie.php?id=<?php echo $value['id'] ?>">
+                <a href="une_serie.php?id=<?php echo $value['id'] ?>">
                     <article class="serieFav">
                         <img class="imgSerieFav" alt="<?php echo $value['name']; ?>" src=<?php echo 'image/' . $value['image']; ?>>
                            <div class="infoSerieFav">

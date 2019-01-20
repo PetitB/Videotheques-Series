@@ -39,7 +39,6 @@
 
         <h1><u>Mon avis </u>: <?php echo $value['avis']; ?></h1>
         <h1><u>Note</u> : <?php echo $value['note']; ?>/5</h1>
-            <label><input type="checkbox" name="fav" <?php if ($value['fav'] == 1) echo "checked"?>>Ajouter aux favoris </label><br><br>
         <?php }
         }
 
@@ -72,7 +71,7 @@
         foreach ($seriesSametype as $value) {
             if ($value['id'] != $serie) {
                 ?>
-                <a href="serie.php?id=<?php echo $value['id'] ?>">
+                <a href="une_serie.php?id=<?php echo $value['id'] ?>">
                     <article class="serie">
                         <img class="imgSerie" alt="image" src=<?php echo "image/" . $value["image"]; ?>>
                         <div class="infoSerie">
@@ -83,6 +82,11 @@
             <?php }
         }?>
     </section>
-
+    <?php
+    $favChgmnt = isset($_GET['favChgmnt']) ? $_GET['favChgmnt'] : "Aucun changement";
+        if ($favChgmnt != "Aucun changement") {
+            favOrNotFav($nom, $_GET('fav'));
+        }
+    ?>
 </body>
 </html>

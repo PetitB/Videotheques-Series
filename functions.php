@@ -188,12 +188,12 @@ function favOrNotfav($nomSerie, $fav){
 	$affichage = "";
 	foreach ($videotheque as $value) {
 		if ($getOnlyFav && $value['fav']) {
-			$affichage .= '<a href="serie.php?nameSerie='.$value['name'].'">';
+			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
 			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
 			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
 		}
 		if (!$getOnlyFav) {
-			$affichage .= '<a href="serie.php?nameSerie='.$value['name'].'">';
+			$affichage .= '<a href="une_serie.php?nameSerie='.$value['name'].'">';
 			$affichage .= '<section class="serie" style='."'background-image:url(".'"image/'.$value['image'].'")'."'>";
 			$affichage .= '<h1>'.$value['name'].'</h1></section></a>';
 		}
