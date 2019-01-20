@@ -21,6 +21,7 @@
     </div>
 </header>
 
+
     <div >
         <h1 id="titre"> Ajouter une série déjà prédéfinie :</h1>
         <form>
@@ -28,13 +29,13 @@
             <select name="listePredef">
                 <option> </option>
 
-
             <?php
             require_once "functions.php";
             $listpredefinie = getListPredef();
 
             foreach ($listpredefinie as $value){
                 ?>
+
             <option><?php echo $value['name'];}?></option>
             </select><br><br>
             <label> Ma note :</label>
