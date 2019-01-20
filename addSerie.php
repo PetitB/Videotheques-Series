@@ -21,7 +21,7 @@
 
     <div>
         <h2> Ajouter une série déjà prédéfinie</h2>
-        <form>
+        <form method="post" action="addSerie.php">
             <select name="bonjour">
             <?php
             require_once "functions.php";
@@ -29,7 +29,7 @@
 
             foreach ($listpredefinie as $value){
                 ?>
-            <option value="<?php echo $value['name']; ?>">
+            <option><?php echo $value['name']; ?>
 
             <?php
             } ?>
