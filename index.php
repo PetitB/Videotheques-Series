@@ -10,7 +10,7 @@
 
 <header>
         <div class="menu">
-            <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo"></img></a>
+            <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo" /></a>
             <input class="burger" type="checkbox" id="checkbox">
             <nav>
                 <a href="index.php">| Liste des séries |</a>
@@ -33,7 +33,7 @@
             $videotheque = getLaVideotheque();
             //print_r($videotheque);
             foreach ($videotheque as $value){ ?>
-                <a href="une_serie.php?id=<?php echo $value['id']?>">
+                <a href="serie.php?id=<?php echo $value['id']?>">
                     <article class="serie">
                         <img class="imgSerie" alt="image" src=<?php echo "image/".$value["image"];?>>
                         <div class="infoSerie">

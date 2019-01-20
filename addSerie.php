@@ -11,7 +11,7 @@
 
 <header>
     <div class="menu">
-        <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo"></img></a>
+        <a href="index.php"> <img class="logo" src="resources/logo.jpg" alt="logo"></a>
         <input class="burger" type="checkbox" id="checkbox">
         <nav>
             <a href="index.php">| Liste des séries |</a>
@@ -22,7 +22,7 @@
 </header>
 
 
-    <div >
+    <div>
         <h1 id="titre"> Ajouter une série déjà prédéfinie :</h1>
         <form>
             <label>Vous pouvez choisir une série de la liste pour l'ajouter: </label>
@@ -35,8 +35,7 @@
 
             foreach ($listpredefinie as $value){
                 ?>
-
-            <option><?php echo $value['name'];}?></option>
+                <option><?php echo $value['name'];}?></option>
             </select><br><br>
             <label> Ma note :</label>
             <select name="note">

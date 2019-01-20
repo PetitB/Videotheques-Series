@@ -36,40 +36,42 @@ body{
     }
 
     /* Fin Flex list*/
+
+
+
     /* Flex Fav*/
     .imgSerieFav {
         width: 500px;
         height: 200px;
         display: block;
-
         margin-bottom: 10px;
+
     }
-
-
     .infoSerieFav {
         display: none;
         color: black;
         background-color: white;
         position: relative;
-        bottom: 65px;
+        bottom: 55px;
+        margin-bottom: -55px;
 
     }
 
     .serieFav:hover .infoSerieFav {
         display: block;
+}
+
+    #containerFav {
+     display: flex;
+     flex-wrap: wrap;
+     width: 500px;
+
+     align-items: center;
+     margin: 0 auto;
     }
 
     p {
         text-shadow: 1px 1px 1px black;
-    }
-
-    #containerFav {
-        display: flex;
-        flex-wrap: wrap;
-        width: 500px;
-
-        align-items: center;
-        margin: 0 auto;
     }
 
     /*Fin Flex fav*/
@@ -140,14 +142,16 @@ form{
         color: black;
         margin-top: 10px;
 }
+    .noteFav{display: none;}
 
     .infoSerieFav {
         display: block;
-        color: white;
+        color: black;
         position: relative;
         text-align: center;
         bottom: 20px;
         width: 100%;
+        margin-bottom: 10px;
     }
 
 
@@ -156,6 +160,7 @@ form{
         display: flex;
         flex-wrap: wrap;
         width: 150px;
+        margin-top: 10px;
     }
 
     #noteFav{
