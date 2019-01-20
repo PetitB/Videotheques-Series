@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Vidéothèque de séries</title>
+    <title>Série</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel="stylesheet" href="navbar.css" type="text/css" />
 </head>
